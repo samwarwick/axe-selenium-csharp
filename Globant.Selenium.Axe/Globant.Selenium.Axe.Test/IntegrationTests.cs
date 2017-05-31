@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium;
 using FluentAssertions;
@@ -6,7 +7,6 @@ using FluentAssertions;
 namespace Globant.Selenium.Axe.Test
 {
     [TestClass]
-    [Ignore]
     public class IntegrationTests
     {
         private IWebDriver _webDriver;
@@ -15,7 +15,7 @@ namespace Globant.Selenium.Axe.Test
         [TestInitialize]
         public void Initialize()
         {
-            _webDriver = new FirefoxDriver();
+            _webDriver = new ChromeDriver();
             _webDriver.Manage().Window.Maximize();
         }
 
